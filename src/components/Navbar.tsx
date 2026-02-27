@@ -26,7 +26,7 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4 lg:px-12">
         <a href="#" className="font-display text-2xl font-bold text-foreground tracking-tight">
-          Apex<span className="text-gradient-gold">Digital</span>
+          Adi<span className="text-gradient-gold">tus</span>
         </a>
 
         {/* Desktop */}

@@ -4,7 +4,7 @@ const testimonials = [
   {
     name: "Sarah Mitchell",
     role: "CEO, LuxeCart",
-    quote: "Apex Digital transformed our online presence. Our sales tripled in 6 months and our brand has never looked better.",
+    quote: "Aditus transformed our online presence. Our sales tripled in 6 months and our brand has never looked better.",
   },
   {
     name: "James Rodriguez",

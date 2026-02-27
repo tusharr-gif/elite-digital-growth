@@ -9,7 +9,7 @@ const AboutSection = () => (
             <span className="text-gradient-gold italic">Growth</span>
           </h2>
           <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-            Apex Digital was founded with a simple belief: every business deserves access to world-class
+            Aditus was founded with a simple belief: every business deserves access to world-class
             digital marketing. We combine creative storytelling with data-driven strategies to help brands
             of all sizes compete and win online.
           </p>
