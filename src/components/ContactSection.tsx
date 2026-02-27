@@ -27,13 +27,13 @@ const ContactSection = () => {
             </p>
 
             <div className="space-y-6">
-              <a href="mailto:hello@aditus.agency" className="flex items-center gap-4 text-muted-foreground hover:text-foreground transition-colors group">
+              <a href="mailto:aditus011@gmail.com" className="flex items-center gap-4 text-muted-foreground hover:text-foreground transition-colors group">
                 <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                   <Mail className="text-primary" size={20} />
                 </div>
                 <div>
                   <div className="text-sm text-muted-foreground">Email</div>
-                  <div className="font-medium text-foreground">hello@aditus.agency</div>
+                  <div className="font-medium text-foreground">aditus011@gmail.com</div>
                 </div>
               </a>
 
