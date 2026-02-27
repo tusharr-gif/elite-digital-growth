@@ -37,18 +37,19 @@ const ContactSection = () => {
                 </div>
               </a>
 
-              <a href="tel:+1234567890" className="flex items-center gap-4 text-muted-foreground hover:text-foreground transition-colors group">
+              <div className="flex items-center gap-4 text-muted-foreground group">
                 <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                   <Phone className="text-primary" size={20} />
                 </div>
                 <div>
                   <div className="text-sm text-muted-foreground">Phone</div>
-                  <div className="font-medium text-foreground">+1 (234) 567-890</div>
+                  <a href="tel:+919309312359" className="font-medium text-foreground hover:text-opacity-80 transition-colors block">+91 9309312359</a>
+                  <a href="tel:+917840919923" className="font-medium text-foreground hover:text-opacity-80 transition-colors block mt-1">+91 7840919923</a>
                 </div>
-              </a>
+              </div>
 
               <a
-                href="https://wa.me/1234567890"
+                href="https://wa.me/919309312359"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 text-muted-foreground hover:text-foreground transition-colors group"
@@ -73,7 +74,7 @@ const ContactSection = () => {
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 className="w-full px-4 py-3 rounded-lg bg-secondary border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
-                placeholder="John Doe"
+                placeholder="Enter your name"
               />
             </div>
             <div>
@@ -84,7 +85,7 @@ const ContactSection = () => {
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 className="w-full px-4 py-3 rounded-lg bg-secondary border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
-                placeholder="john@company.com"
+                placeholder="Enter email"
               />
             </div>
             <div>
@@ -94,7 +95,7 @@ const ContactSection = () => {
                 value={formData.phone}
                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                 className="w-full px-4 py-3 rounded-lg bg-secondary border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
-                placeholder="+1 (234) 567-890"
+                placeholder="Your phone no."
               />
             </div>
             <div>
