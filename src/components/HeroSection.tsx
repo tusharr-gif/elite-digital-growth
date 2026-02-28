@@ -1,12 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 
-const stats = [
-  { value: "150+", label: "Projects Delivered" },
-  { value: "$2M+", label: "Revenue Generated" },
-  { value: "98%", label: "Client Satisfaction" },
-  { value: "5+", label: "Years Experience" },
-];
+
 
 const HeroSection = () => (
   <section className="relative min-h-screen flex items-center overflow-hidden">
@@ -44,15 +39,7 @@ const HeroSection = () => (
         </div>
       </div>
 
-      {/* Stats */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-20 pt-10 border-t border-border/50">
-        {stats.map((s, i) => (
-          <div key={s.label} className="animate-fade-in" style={{ animationDelay: `${0.5 + i * 0.1}s` }}>
-            <div className="font-display text-3xl md:text-4xl font-bold text-gradient-gold">{s.value}</div>
-            <div className="text-sm text-muted-foreground mt-1">{s.label}</div>
-          </div>
-        ))}
-      </div>
+
     </div>
   </section>
 );

@@ -5,8 +5,22 @@ const ContactSection = () => {
   const [formData, setFormData] = useState({ name: "", email: "", phone: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Send LIVE data to the Database
+    try {
+      await fetch('http://localhost:5000/api/leads', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
+    } catch (err) {
+      console.warn("Analytics server unreachable right now.");
+    }
+
     setSubmitted(true);
     setTimeout(() => setSubmitted(false), 3000);
     setFormData({ name: "", email: "", phone: "", message: "" });
