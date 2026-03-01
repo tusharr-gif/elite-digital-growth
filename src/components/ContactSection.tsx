@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Send, Mail, Phone, MessageCircle } from "lucide-react";
+import { supabase } from "@/lib/supabase";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({ name: "", email: "", phone: "", message: "" });
@@ -8,7 +9,22 @@ const ContactSection = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Send LIVE data to the Database
+    // 1. Send data to Supabase
+    try {
+      const { error } = await supabase.from('leads').insert([{
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        message: formData.message,
+        source: 'Website Form',
+        device: window.innerWidth < 768 ? 'Mobile' : 'Desktop'
+      }]);
+      if (error) console.error("Supabase insert error:", error.message);
+    } catch (err) {
+      console.warn("Could not connect to Supabase.");
+    }
+
+    // 2. Send LIVE data to the Database (for Analytics Dashboard & Email)
     try {
       await fetch('http://localhost:5000/api/leads', {
         method: 'POST',
