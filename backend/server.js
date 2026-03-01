@@ -113,14 +113,14 @@ app.post('/api/leads', (req, res) => {
             const transporter = nodemailer.createTransport({
                 service: 'gmail',
                 auth: {
-                    user: process.env.EMAIL_USER || 'aditus11@gmail.com', // Sender
+                    user: process.env.EMAIL_USER || 'aditus011@gmail.com', // Sender
                     pass: process.env.EMAIL_PASS // App Password required
                 }
             });
 
             const mailOptions = {
-                from: process.env.EMAIL_USER || 'aditus11@gmail.com',
-                to: 'aditus11@gmail.com', // Sending the form completion TO this address
+                from: process.env.EMAIL_USER || 'aditus011@gmail.com',
+                to: 'aditus011@gmail.com', // Sending the form completion TO this address
                 subject: `New Lead Alert: ${name} contacted Elite Digital Growth!`,
                 html: `
                     <h2 style="color: #D4AF37;">New Lead Generated!</h2>
@@ -149,7 +149,7 @@ app.post('/api/leads', (req, res) => {
                 if (mailErr) {
                     console.error('Failed to send email notification:', mailErr);
                 } else {
-                    console.log('✅ Success: Form details emailed to aditus11@gmail.com!', info.response);
+                    console.log('✅ Success: Form details emailed to aditus011@gmail.com!', info.response);
                 }
             });
         } else {

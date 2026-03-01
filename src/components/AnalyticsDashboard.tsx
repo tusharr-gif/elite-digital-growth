@@ -5,7 +5,7 @@ import {
     LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip as RechartsTooltip, ResponsiveContainer, AreaChart, Area,
     ComposedChart
 } from 'recharts';
-import { ArrowUpRight, ArrowDownRight, Users, UserPlus, DollarSign, Activity, Globe, Monitor, MapPin, Download, Calendar, Lock } from 'lucide-react';
+import { ArrowUpRight, ArrowDownRight, Users, UserPlus, DollarSign, Activity, Globe, Monitor, MapPin, Download, Calendar } from 'lucide-react';
 
 const COLORS = ['#D4AF37', '#F3E5AB', '#997A00', '#C5B358', '#E6C200', '#8A6D3B'];
 
@@ -120,17 +120,10 @@ const CustomTooltip = ({ active, payload, label }: any) => {
 };
 
 const AnalyticsDashboard = () => {
-    const [isAuthenticated, setIsAuthenticated] = useState(false);
-    const [password, setPassword] = useState('');
     const [activeTab, setActiveTab] = useState('leads');
     const [dateFilter, setDateFilter] = useState('30d');
     const [data, setData] = useState(fallbackData);
     const [loading, setLoading] = useState(true);
-
-    const handleLogin = (e) => {
-        e.preventDefault();
-        if (password === 'admin123') setIsAuthenticated(true);
-    };
 
     const handleExport = () => {
         const csvContent = "data:text/csv;charset=utf-8,Type,Value\\n" +
@@ -176,32 +169,6 @@ const AnalyticsDashboard = () => {
         }, 5000);
         return () => clearInterval(interval);
     }, []);
-
-    if (!isAuthenticated) {
-        return (
-            <section className="relative z-10 w-full max-w-xl mx-auto section-padding py-32 animate-fade-in">
-                <Card className="flex flex-col items-center">
-                    <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
-                        <Lock className="w-8 h-8 text-primary" />
-                    </div>
-                    <h2 className="text-3xl font-display font-bold text-foreground mb-2">Admin Access</h2>
-                    <p className="text-muted-foreground mb-8 text-center">Enter your password to view analytics</p>
-                    <form onSubmit={handleLogin} className="w-full flex flex-col gap-4">
-                        <input
-                            type="password"
-                            placeholder="Enter Password (admin123)"
-                            className="w-full px-4 py-3 bg-secondary/50 border border-border rounded-lg text-foreground focus:outline-none focus:border-primary transition-colors"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                        />
-                        <button type="submit" className="w-full bg-gradient-gold text-primary-foreground font-semibold py-3 rounded-lg shadow-gold hover:opacity-90 transition-opacity">
-                            Access Dashboard
-                        </button>
-                    </form>
-                </Card>
-            </section>
-        );
-    }
 
     if (loading) {
         return <div className="min-h-screen pt-32 flex items-center justify-center">Loading Analytics...</div>;
